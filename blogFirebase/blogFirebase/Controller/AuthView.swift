@@ -14,6 +14,7 @@ class AuthView: UIViewController {
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     
@@ -31,8 +32,12 @@ class AuthView: UIViewController {
                         self.makeAlert(alertTitle: "Error!", alertMessage: error?.localizedDescription ?? "Error")
                     }else{
                         // Hata Yok -> BlogView geç
+                        if let currentUser = Auth.auth().currentUser {
+                            print("Signed in user: \(currentUser.email ?? "No email")")
+                        }
                         self.performSegue(withIdentifier: "toBlog", sender: nil)
-                        print("Sign In Successful")
+                        
+                        
                     }
                 }
             }else{

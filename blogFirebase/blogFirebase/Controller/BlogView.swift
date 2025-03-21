@@ -29,7 +29,6 @@ class BlogView: UIViewController {
     @IBAction func logOutButton(_ sender: UIButton) {
         do{
             try Auth.auth().signOut()
-            print("Sign Out Successfully")
             self.performSegue(withIdentifier: "toAuth", sender: nil)
         }catch{
             print("Error signing out: \(error)")

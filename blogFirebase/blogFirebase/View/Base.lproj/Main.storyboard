@@ -81,14 +81,53 @@
                     <view key="view" contentMode="scaleToFill" id="bQk-06-2tM">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="photo.on.rectangle.angled" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="SYY-Ar-FTR">
+                                <rect key="frame" x="48.666666666666657" y="91" width="296" height="311"/>
+                                <color key="tintColor" red="0.89054608589999995" green="0.14658868420000001" blue="0.15802045479999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="311.67000000000002" id="2me-cf-DKO"/>
+                                    <constraint firstAttribute="width" constant="296" id="6QZ-kO-1Gu"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MUs-qw-byR">
+                                <rect key="frame" x="49" y="438" width="295" height="42"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled">
+                                    <attributedString key="attributedTitle">
+                                        <fragment content="Photo">
+                                            <attributes>
+                                                <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                <font key="NSFont" size="24" name="AmericanTypewriter-Semibold"/>
+                                                <font key="NSOriginalFont" size="12" name="Helvetica"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                    <color key="baseBackgroundColor" red="0.73802477899999996" green="0.12283390550000001" blue="0.13665403800000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="photoButton:" destination="FkT-mp-xwr" eventType="touchUpInside" id="V77-Fk-1Nk"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="skL-5Q-r50"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="skL-5Q-r50" firstAttribute="trailing" secondItem="MUs-qw-byR" secondAttribute="trailing" constant="49" id="JVx-nj-ruq"/>
+                            <constraint firstItem="SYY-Ar-FTR" firstAttribute="centerX" secondItem="bQk-06-2tM" secondAttribute="centerX" id="RXS-Dm-pv0"/>
+                            <constraint firstItem="SYY-Ar-FTR" firstAttribute="top" secondItem="skL-5Q-r50" secondAttribute="top" constant="91" id="aNu-FK-NGk"/>
+                            <constraint firstItem="MUs-qw-byR" firstAttribute="top" secondItem="SYY-Ar-FTR" secondAttribute="bottom" constant="35.329999999999998" id="qwO-wi-Y8e"/>
+                            <constraint firstItem="MUs-qw-byR" firstAttribute="leading" secondItem="skL-5Q-r50" secondAttribute="leading" constant="49" id="xOV-w7-h6n"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Upload" image="plus.message" catalog="system" id="4Ij-Zh-sT4"/>
+                    <connections>
+                        <outlet property="imageView" destination="SYY-Ar-FTR" id="U2b-jU-cOU"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x3n-E1-0TM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1824" y="338"/>
+            <point key="canvasLocation" x="1823.6641221374045" y="337.32394366197184"/>
         </scene>
         <!--Blog View-->
         <scene sceneID="tG3-O6-2Yc">
@@ -166,6 +205,7 @@
     </scenes>
     <resources>
         <image name="book" catalog="system" width="128" height="99"/>
+        <image name="photo.on.rectangle.angled" catalog="system" width="128" height="98"/>
         <image name="plus.message" catalog="system" width="128" height="116"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

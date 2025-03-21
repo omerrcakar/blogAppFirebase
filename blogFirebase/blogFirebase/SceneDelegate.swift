@@ -21,8 +21,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // Kullanıcı giriş durumuna göre ilk açılacak yeri kontrol
         let currentUser = Auth.auth().currentUser
         if currentUser != nil {
-            // Kullanıcı boş değilse - aktif giriş yapmış kullanıcı varsa - tab barı aç
+            // Aktif kullanıcı boş değilse - aktif giriş yapmış kullanıcı varsa - tab barı aç
             // Storyboardımızı tanımlayacaz
+            // İlk açılacak yer kontrolü
             let board = UIStoryboard(name: "Main", bundle: nil)
             let tabBar = board.instantiateViewController(withIdentifier: "tabBar") as! UITabBarController
             window?.rootViewController = tabBar
